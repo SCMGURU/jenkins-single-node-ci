@@ -1,0 +1,23 @@
+version: '3.0'
+services: 
+  jenkins:
+    image: jenkinsci/blueocean
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+      - "8443:8443"
+    networks: 
+      - jenkinsnet
+    volumes: 
+      - "jenkins_home:/var/jenkins_home"
+
+
+networks: 
+  jenkinsnet:
+
+volumes: 
+  jenkins_home:
+
+
+
